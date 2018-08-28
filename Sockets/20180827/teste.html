@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="pt-BR"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="pt-BR"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="pt-BR"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="pt-BR"> <!--<![endif]-->
+<head>
+<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>Blog do BG</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="uri" content="http://blogdobg.com.br/">
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<meta name="DC.publisher" content="Ratts Ratis" />
+<meta name="robots" content="all" />
+<meta name="author" content="Ratts Ratis" />
+<meta name="front-end" content="Phelippe Matte - http://goo.gl/yfumFT" />
+<meta name="rating" content="general" />
+<meta name="distribution" content="global" />
+<meta name="language" content="pt-br" />
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#e57207">
+<link rel='dns-prefetch' href='//www.blogdobg.com.br' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.blogdobg.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" href="https://www.blogdobg.com.br/wp-includes/css/dashicons.min.css?ver=4.9.1">
+<link rel="stylesheet" href="https://www.blogdobg.com.br/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.2.11">
+<link rel="stylesheet" href="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/css/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" href="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/css/fancybox/jquery.fancybox-buttons.css">
+<link rel="stylesheet" href="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/css/fancybox/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/css/blog.min.css?ver=1532952410">
+<script type='text/javascript' src='https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/js/vendor/modernizr-2.6.2.min.js'></script>
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<link rel='https://api.w.org/' href='https://www.blogdobg.com.br/wp-json/' />
+<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Lato" rel="stylesheet">
+<link rel="stylesheet" href="/wp-content/themes/BG-V3/assets/css/main.min.css">
+<link rel="alternate" type="application/rss+xml" title="Blog do BG Feed" href="https://www.blogdobg.com.br/feed/">
+<script type="application/javascript">
+      var total = 7033;
+  </script>
+<script type="text/javascript">
+      var isMobile = true;
+  </script>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+  </script>
+<script>
+    googletag.cmd.push(function() {
+    var DFP_Slots = [];
+
+    //Sidebar
+
+    DFP_Slots.push(googletag.defineSlot('/21634872791/barra-lateral-superior', [300, 250], 'div-gpt-ad-1508862982389-0').addService(googletag.pubads()));
+    DFP_Slots.push(googletag.defineSlot('/21634872791/bloco-lateral-meio', [300, 250], 'div-gpt-ad-1508863049677-0').addService(googletag.pubads()));
+    DFP_Slots.push(googletag.defineSlot('/21634872791/barra-lateral-inferior', [300, 250], 'div-gpt-ad-1508862892996-0').addService(googletag.pubads()));
+      
+    //Adsense Sidebar
+
+    DFP_Slots.push(googletag.defineSlot('/21634872791/sidebar-adsense', [300, 250], 'div-gpt-ad-1526916794521-0').addService(googletag.pubads()));
+    DFP_Slots.push(googletag.defineSlot('/21634872791/sidebar-adsense-inferior', [300, 600], 'div-gpt-ad-1526917617430-0').addService(googletag.pubads()));
+
+    //Entreposts
+
+    if (screen.width < 1090) { //Mobile
+      // Entre-Post Fixo para o Mobile
+      DFP_Slots.push(googletag.defineSlot('/21634872791/entre-posts-fixo-mobile', [300, 250], 'div-gpt-ad-1507575686775-0').addService(googletag.pubads()));
+      //Demais Entre-Posts
+      for (var i = 1; i <= 15; i++) {
+        DFP_Slots.push(googletag.defineSlot('/21634872791/entre-posts', [300, 250], 'div-gpt-ad-1507575686775-' + i).addService(googletag.pubads()));
+      }
+    } else { // Desktop
+      for (var i = 0; i <= 15; i++) {
+        DFP_Slots.push(googletag.defineSlot('/21634872791/entre-posts', [[750, 200], [728, 90]], 'div-gpt-ad-1507575686775-' + i).addService(googletag.pubads()));
+      }
+    }
+
+
+
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+  </script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7882279798306724",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+<body class="blog">
+<!--[if lt IE 7]><div class="alert">Você está utilizando um navegador <strong>desatualizado</strong>. Por favor, <a href="http://browsehappy.com/">atualize seu navegador</a> para melhorar sua experiência.</div><![endif]-->
+<header id="header">
+<section class="container clearfix">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<div class="navbar-logo">
+<a href="https://www.blogdobg.com.br">
+<script type="text/javascript">
+//<![CDATA[
+window.__mirage2 = {petok:"6b9f5331558e86c7250d656b61cd1610d1d188f2-1535416612-1800"};
+//]]>
+</script>
+<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/04b3eb47/cloudflare-static/mirage2.min.js"></script>
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logobg_70x56.png" alt="Logo" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logobg_70x56.png" alt="Logo"></noscript>
+</a>
+</div>
+<div class="navbar-info">
+<img id="foto_bg" data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/bg-foto.png" style="display:none;visibility:hidden;"><noscript><img id="foto_bg" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/bg-foto.png"></noscript>
+<span id="nome_bg">por<br><b>Bruno<br>Giovanni</b></span>
+</div>
+<div class="navbar-search">
+<form role="search" method="get" id="searchform" class="form-search" action="https://www.blogdobg.com.br/">
+<div class="submit">
+
+<button type="submit" value="Busca" id="searchsubmit"><i class="fa fa-search"></i></button>
+</div>
+<div class="input">
+<input type="text" value="" name="s" id="s" class="search-query" placeholder="O que você está procurando?">
+</div>
+</form> </div>
+<div class="navbar-menu">
+<button type="button" id="menu-toggle" class="navbar-toggle menu-drop" aria-expanded="true" onclick="toggle_menu()">
+<span class="sr-only">Toggle navigation</span>
+<i class="fa fa-bars"></i>
+</button>
+<div class="collapse col-sm-12 col-md-6 col-xs-12" id="menu-drop">
+<div class="col-sm-6 col-xs-12">
+<ul id="menu-primary-navigation" class="nav navbar-nav col-sm-12"><li class="active menu-home"><a href="https://www.blogdobg.com.br/home/">Home</a></li>
+<li class="menu-e-ai-bora-correr"><a href="https://www.blogdobg.com.br/boraCorrer/">E ai, bora correr?</a></li>
+<li class="menu-categorias"><a href="https://www.blogdobg.com.br/categorias/">Categorias</a></li>
+<li class="menu-politica-de-privacidade"><a href="https://www.blogdobg.com.br/politica-de-privacidade/">Política de Privacidade</a></li>
+</ul> </div>
+</div>
+<script>
+                            function toggle_menu() {
+                                menu = document.getElementById("menu-drop");
+                                if (menu.classList.contains('collapse')) {
+                                    menu.classList.remove("collapse");
+                                } else {
+                                    menu.classList.add("collapse");
+                                }
+                            }   
+                        </script>
+</div>
+</div>
+</div>
+</nav>
+</section>
+<script type="text/javascript">if(document.location.protocol=='http:'){ var Tynt=Tynt||[];Tynt.push('aJMSEI5-ar4kaQacwqm_6l');Tynt.i={"ap":"Blog do BG:","aw":"14"}; (function(){var s=document.createElement('script');s.async="async";s.type="text/javascript";s.src='http://tcr.tynt.com/ti.js';var h=document.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})();}</script>
+</header>
+<section id="content" role="document">
+<div class="notop" style="">
+<a href="https://bit.ly/pgprimejaguar" id="envelopamento" data-mobi-src="https://assets.blogdobg.com.br/uploads/2018/05/3-jaguar.png" data-desk-src="https://assets.blogdobg.com.br/uploads/2018/05/1-Jaguar.png" style="background-image:url('https://assets.blogdobg.com.br/uploads/2018/05/3-jaguar.png'); " target="_blank">
+<img data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/05/1-Jaguar.png" class="img-grande" style="display:none;visibility:hidden;" /><noscript><img src="https://assets.blogdobg.com.br/uploads/2018/05/1-Jaguar.png" class="img-grande" /></noscript>
+</a>
+<a href="https://bit.ly/pgprimejaguar" id="envelopamento-mini" data-mobi-src="https://assets.blogdobg.com.br/uploads/2018/05/4-jaguar.png" data-desk-src="https://assets.blogdobg.com.br/uploads/2018/05/2-Jaguar.png" style="background-image:url('https://assets.blogdobg.com.br/uploads/2018/05/4-jaguar.png'); " target="_blank">
+<img data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/05/2-Jaguar.png" class="img-grande" style="display:none;visibility:hidden;" /><noscript><img src="https://assets.blogdobg.com.br/uploads/2018/05/2-Jaguar.png" class="img-grande" /></noscript>
+</a>
+</div>
+<section class="container">
+<section id="main" class="col-sm-12 col-xs-12 col-md-8 row" role="main">
+<script type="text/javascript">
+function shuffle(array) {
+    var currentIndex = array.length
+      , temporaryValue
+      , randomIndex
+      ;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+
+$(function(){
+    // Yeah, It's sad, but I'm going to fix this very soon. I promisse.
+    var banners = [
+      ''
+    ];
+
+    var banners_mobile = [
+     ''
+    ];
+
+    var link_to_go = '';
+
+    var ad_container = $('#ad_index_desktop').length > 0 ? $('#ad_index_desktop') : $('#ad_index_mobile');
+    var new_image = $('<img class="desktop" src="" style="display: inline-block; width:100%; margin-bottom: 18px; display: none">');
+    new_image.on('load', function(){
+        $(this).slideDown(100);
+    });
+
+    if ($('#ad_index_mobile').length > 0) {
+        shuffle(banners_mobile);
+        $(new_image).prop('src', banners_mobile[0]);
+    } else {
+        shuffle(banners);
+        $(new_image).prop('src', banners[0]);
+    }
+
+    $(ad_container).attr('href', link_to_go);
+    $(ad_container).append(new_image);
+
+});
+</script>
+<div class="search mobile">
+<form role="search" method="get" id="searchform" class="form-search" action="https://www.blogdobg.com.br/">
+<div class="submit">
+
+<button type="submit" value="Busca" id="searchsubmit"><i class="fa fa-search"></i></button>
+</div>
+<div class="input">
+<input type="text" value="" name="s" id="s" class="search-query" placeholder="O que você está procurando?">
+</div>
+</form></div>
+<article class="post-489593 post type-post status-publish format-standard hentry category-politica">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T21:24:58+00:00">27/08/2018 às 21:24 em</time> <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/ha-elementos-de-prova-de-caixa-2-de-haddad-em-2012-diz-juiz-eleitoral/">Há ‘elementos de prova’ de caixa 2 de Haddad em 2012, diz juiz eleitoral</a></h2>
+</header>
+<div class="entry-summary">
+<p><img data-cfsrc="https://assets.blogdobg.com.br/uploads/2017/10/fernando-haddad1.jpeg" alt="" width="595" height="336" class="aligncenter size-full wp-image-429933" style="display:none;visibility:hidden;" /><noscript><img src="https://assets.blogdobg.com.br/uploads/2017/10/fernando-haddad1.jpeg" alt="" width="595" height="336" class="aligncenter size-full wp-image-429933" /></noscript></p>
+<p>O juiz Francisco Carlos Inouye Shintate, da 1ª Zona Eleitoral de São Paulo, responsável pelo processo contra o ex-prefeito de São Paulo Fernando Haddad (PT) por suposto caixa dois na eleição municipal de 2012, reafirmou nesta segunda-feira, 27, que há “elementos de prova” do crime contra o petista e manteve Haddad como réu na ação. O ex-prefeito paulistano é acusado de receber em sua campanha naquele ano, quando foi eleito, 2,6 milhões de reais não declarados da UTC Engenharia.</p>
+<p>Ao responder à denúncia do Ministério Público Eleitoral (MPE), a defesa de Haddad pedia que a acusação fosse rejeitada por nulidade processual, a partir do compartilhamento de provas da Operação Custo Brasil, “inépcia formal” e falta de justa causa.</p>
+<p>“Rejeito a alegação de inépcia formal da denúncia, uma vez que se vislumbra, ao menos neste juízo de cognição sumária, elementos de prova que indicam a materialidade do crime e a coparticipação deste corréu. O corpo da denúncia descreve o falso [falsidade ideológica eleitoral, como é conhecida o crime de caixa dois], a autoria do corréu, e o dolo”, decidiu o magistrado.</p>
+<p>No despacho assinado nesta segunda-feira, o juiz eleitoral sustenta que há na denúncia indícios “de que houve ações de captação de recursos que sabidamente seriam omitidos na prestação de contas”, assinada tanto por Fernando Haddad quanto pelo tesoureiro da campanha, Francisco Macena da Silva, o Chico Macena.</p>
+<p>Shintate cita entre os indícios perícias, quebras de sigilo telefônico e bancário e apreensão de documentos, além de depoimentos de delatores como Ricardo Pessoa, dono da UTC, o doleiro Alberto Youssef e seus funcionários Walmir Santana e Rafael Ângulo Lopez. Pessoa relatou ter repassado os 2,6 milhões de reais à campanha de Haddad por meio de pagamentos a gráficas que prestaram serviços ao petista.</p>
+<p>“O corréu Fernando Haddad foi o candidato do PT à Prefeitura de São Paulo em 2012, respondia pela exatidão das contas prestadas e dos valores recebidos e pagos, participou ativamente da campanha e assinou o documento”, destaca o juiz da 1ª Zona Eleitoral de São Paulo.</p>
+<p>Além de Haddad e Chico Macena, são réus na ação na Justiça Eleitoral paulista o ex-tesoureiro do PT João Vaccari Neto, o ex-deputado estadual Francisco Carlos de Souza e Ronaldo Cândido de Jesus. Souza, conhecido como “Chico Gordo”, e Cândido eram donos das gráficas LWC e Cândido e Oliveira Gráfica Ltda, às quais o empreiteiro diz ter feito pagamentos.</p>
+<p><strong>Veja</strong></p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/ha-elementos-de-prova-de-caixa-2-de-haddad-em-2012-diz-juiz-eleitoral/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=H%C3%A1%20%E2%80%98elementos%20de%20prova%E2%80%99%20de%20caixa%202%20de%20Haddad%20em%202012%2C%20diz%20juiz%20eleitoral%20https%3A%2F%2Fwww.blogdobg.com.br%2Fha-elementos-de-prova-de-caixa-2-de-haddad-em-2012-diz-juiz-eleitoral%2F" data-text="Há ‘elementos de prova’ de caixa 2 de Haddad em 2012, diz juiz eleitoral" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=H%C3%A1%20%E2%80%98elementos%20de%20prova%E2%80%99%20de%20caixa%202%20de%20Haddad%20em%202012%2C%20diz%20juiz%20eleitoral%20https%3A%2F%2Fwww.blogdobg.com.br%2Fha-elementos-de-prova-de-caixa-2-de-haddad-em-2012-diz-juiz-eleitoral%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/ha-elementos-de-prova-de-caixa-2-de-haddad-em-2012-diz-juiz-eleitoral/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=H%C3%A1%20%E2%80%98elementos%20de%20prova%E2%80%99%20de%20caixa%202%20de%20Haddad%20em%202012%2C%20diz%20juiz%20eleitoral%20https%3A%2F%2Fwww.blogdobg.com.br%2Fha-elementos-de-prova-de-caixa-2-de-haddad-em-2012-diz-juiz-eleitoral%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-0' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-0'); });
+          </script>
+</div>
+</article>
+<article class="post-489586 post type-post status-publish format-standard hentry category-policia">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T21:18:42+00:00">27/08/2018 às 21:18 em</time> <a href="https://www.blogdobg.com.br/category/policia/" rel="category tag">Polícia</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/policia-civil-prende-suspeito-por-trafico-de-drogas-em-parnamirim/">Polícia Civil prende suspeito por tráfico de drogas em Parnamirim</a></h2>
+</header>
+<div class="entry-summary">
+<p><img class="aligncenter size-full wp-image-489587" data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/08/WhatsApp-Image-2018-08-27-at-21.14.43.jpeg" alt="" width="811" height="584" style="display:none;visibility:hidden;" /><noscript><img class="aligncenter size-full wp-image-489587" src="https://assets.blogdobg.com.br/uploads/2018/08/WhatsApp-Image-2018-08-27-at-21.14.43.jpeg" alt="" width="811" height="584" /></noscript></p>
+<p>Uma ação da 2ª Delegacia de Polícia Civil de Parnamirim prendeu em flagrante, na tarde desta segunda-feira (27), Gilmar Nascimento da Silva, vulgo “Monga”, 24 anos, suspeito pelos crimes de tráfico de drogas, associação para o tráfico e posse ilegal de arma de fogo.</p>
+<p>As investigações da 2ª DP foram iniciadas após o recebimento de denúncias anônimas, que levaram a realização de diligências pela região de Pium, em Parnamirim. Ao chegarem no local informado, os policiais abordaram Gilmar e o prenderam, um outro suspeito, que estava com ele no momento da ação, conseguiu fugir.</p>
+<p>Os agentes apreenderam com Gilmar, porções de maconha, cocaína, balanças de precisão, dinheiro fracionado, apetrechos utilizados no tráfico de drogas, um revólver calibre 38, munições de diversos calibres, além de outros objetivos apreendidos. O suspeito preso e seu comparsa são membros de uma facção criminosa do Rio Grande do Norte, e seriam os principais traficantes de drogas da região.</p>
+<p>A 2ª DP de Parnamirim conta com o apoio da população para elucidar os crimes existentes na cidade. Para isso, disponibiliza, além do Disque-Denúncia 181, o WhatsApp próprio da Delegacia no número (84) 98135-6724. As informações podem ser repassadas de forma anônima, com garantia de sigilo absoluto.</p>
+<p><img class="aligncenter size-large wp-image-489588" data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/08/WhatsApp-Image-2018-08-27-at-21.14.42.jpeg" alt="" width="493" height="554" style="display:none;visibility:hidden;" /><noscript><img class="aligncenter size-large wp-image-489588" src="https://assets.blogdobg.com.br/uploads/2018/08/WhatsApp-Image-2018-08-27-at-21.14.42.jpeg" alt="" width="493" height="554" /></noscript></p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/policia-civil-prende-suspeito-por-trafico-de-drogas-em-parnamirim/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Pol%C3%ADcia%20Civil%20prende%20suspeito%20por%20tr%C3%A1fico%20de%20drogas%20em%20Parnamirim%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpolicia-civil-prende-suspeito-por-trafico-de-drogas-em-parnamirim%2F" data-text="Polícia Civil prende suspeito por tráfico de drogas em Parnamirim" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Pol%C3%ADcia%20Civil%20prende%20suspeito%20por%20tr%C3%A1fico%20de%20drogas%20em%20Parnamirim%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpolicia-civil-prende-suspeito-por-trafico-de-drogas-em-parnamirim%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/policia-civil-prende-suspeito-por-trafico-de-drogas-em-parnamirim/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Pol%C3%ADcia%20Civil%20prende%20suspeito%20por%20tr%C3%A1fico%20de%20drogas%20em%20Parnamirim%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpolicia-civil-prende-suspeito-por-trafico-de-drogas-em-parnamirim%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-1' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-1'); });
+          </script>
+</div>
+</article>
+<article class="post-489589 post type-post status-publish format-standard hentry category-politica">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T21:17:29+00:00">27/08/2018 às 21:17 em</time> <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/presidente-do-mulheres-progressistas-do-rn-disputara-vaga-na-camara-federal/">Presidente do “Mulheres Progressistas” do RN disputará vaga na Câmara Federal</a></h2>
+</header>
+<div class="entry-summary">
+<p>Presidente do movimento denominado Mulheres Progressistas no PP do Rio Grande do Norte, a ex-vereadora de Boa Saúde-RN disputará uma vaga na Câmara Federal. “É um objetivo dos Progressistas aumentar a participação das mulheres na política”, destacou Juliana.</p>
+<p>Defensora dos direitos das mulheres, Juliana vem para a campanha com uma pauta diversificada, que abrange desde a mudança no pacto federativo até a regulamentação fundiária. </p>
+<p>“Como deputada federal, tenho que estar preparada para lutar em diferentes frentes”, explicou Juliana, que ressaltou a importância de ter uma pauta plural.</p>
+<p>“Ao mesmo tempo em que defenderei os direitos das mulheres, vou lutar por mais recursos para os municípios, por investimentos na educação de base, por uma saúde de qualidade, entre outros temas, além de batalhar por recursos para o Estado”, reforçou a candidata. </p>
+<p>Defensora de uma nova política, Juliana pretende também atuar no combate à corrupção e a favor de uma reforma que garanta oportunidades iguais nas disputas por cargos eletivos.</p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/presidente-do-mulheres-progressistas-do-rn-disputara-vaga-na-camara-federal/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Presidente%20do%20%E2%80%9CMulheres%20Progressistas%E2%80%9D%20do%20RN%20disputar%C3%A1%20vaga%20na%20C%C3%A2mara%20Federal%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpresidente-do-mulheres-progressistas-do-rn-disputara-vaga-na-camara-federal%2F" data-text="Presidente do “Mulheres Progressistas” do RN disputará vaga na Câmara Federal" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Presidente%20do%20%E2%80%9CMulheres%20Progressistas%E2%80%9D%20do%20RN%20disputar%C3%A1%20vaga%20na%20C%C3%A2mara%20Federal%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpresidente-do-mulheres-progressistas-do-rn-disputara-vaga-na-camara-federal%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/presidente-do-mulheres-progressistas-do-rn-disputara-vaga-na-camara-federal/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Presidente%20do%20%E2%80%9CMulheres%20Progressistas%E2%80%9D%20do%20RN%20disputar%C3%A1%20vaga%20na%20C%C3%A2mara%20Federal%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpresidente-do-mulheres-progressistas-do-rn-disputara-vaga-na-camara-federal%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-2' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-2'); });
+          </script>
+</div>
+</article>
+<article class="post-489584 post type-post status-publish format-standard hentry category-politica">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T21:06:14+00:00">27/08/2018 às 21:06 em</time> <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/pesquisa-blog-do-bg-seta-em-um-mes-fatima-e-robinson-crescem-carlos-eduardo-cai/">PESQUISA BLOG DO BG/SETA: Em um mês Fátima e Robinson crescem; Carlos Eduardo cai</a></h2>
+</header>
+<div class="entry-summary">
+<p>A pesquisa Seta divulgada esta semana mostrou uma pequena variação das intenções de voto dos principais candidatos em comparação com a última pesquisa divulgada há cerca de um mês. Variações dentro da margem de erro, mas que mostram um desenho sem grandes mudanças nesse primeiro mês de campanha.</p>
+<p>Liderando, Fátima, que tinha 25,5%, aparece agora com 26%, um crescimento de 0,5%. Carlos Eduardo, que é o segundo nas pesquisas, caiu de 14,7% para 13%, uma queda de mais de um ponto percentual. Robinson também mostrou um crescimento de mais um ponto percentual inteiro, saltando de 8,7% para 10%. </p>
+<p><strong>Pesquisa de 27/08</strong></p>
+<p>A pesquisa do instituto Seta, publicada pelo Blog do BG, foi realizada com 1300 entrevistados de todas as regiões do Estado entre os dias 18 e 20 de agosto. Ela foi calculada com margem de erro de 3% para mais ou para menos e grau de confiança de 95%. Os dados estão registrados na Justiça Eleitoral sob os protocolos RN-05667/2018 e BR-00927/2018.</p>
+<p><strong>Pesquisa de 07/08</strong></p>
+<p>A coleta dos dados aconteceu entre os dias 31 de julho e 2 de agosto com 1100 entrevistados. A pesquisa foi calculada com margem de erro de 3,5% para mais ou para menos e com grau de confiança de 95%. Ela foi registrada na Justiça Eleitoral sob os protocolos RN-09856/2018 e BR-05663/2018.</p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/pesquisa-blog-do-bg-seta-em-um-mes-fatima-e-robinson-crescem-carlos-eduardo-cai/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=PESQUISA%20BLOG%20DO%20BG%2FSETA%3A%20Em%20um%20m%C3%AAs%20F%C3%A1tima%20e%20Robinson%20crescem%3B%20Carlos%20Eduardo%20cai%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-blog-do-bg-seta-em-um-mes-fatima-e-robinson-crescem-carlos-eduardo-cai%2F" data-text="PESQUISA BLOG DO BG/SETA: Em um mês Fátima e Robinson crescem; Carlos Eduardo cai" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=PESQUISA%20BLOG%20DO%20BG%2FSETA%3A%20Em%20um%20m%C3%AAs%20F%C3%A1tima%20e%20Robinson%20crescem%3B%20Carlos%20Eduardo%20cai%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-blog-do-bg-seta-em-um-mes-fatima-e-robinson-crescem-carlos-eduardo-cai%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/pesquisa-blog-do-bg-seta-em-um-mes-fatima-e-robinson-crescem-carlos-eduardo-cai/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=PESQUISA%20BLOG%20DO%20BG%2FSETA%3A%20Em%20um%20m%C3%AAs%20F%C3%A1tima%20e%20Robinson%20crescem%3B%20Carlos%20Eduardo%20cai%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-blog-do-bg-seta-em-um-mes-fatima-e-robinson-crescem-carlos-eduardo-cai%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-3' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-3'); });
+          </script>
+</div>
+</article>
+<article class="post-489581 post type-post status-publish format-standard hentry category-politica">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T20:23:30+00:00">27/08/2018 às 20:23 em</time> <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/pesquisa-bg-seta-em-um-mes-styvenson-cresce-5-e-zenaide-ultrapassa-garibaldi/">PESQUISA BLOG DO BG/SETA: Em um mês, Styvenson cresce 5% e Zenaide ultrapassa Garibaldi</a></h2>
+</header>
+<div class="entry-summary">
+<p>Fazendo um comparativo com a pesquisa eleitoral do instituto Seta divulgada essa semana e a divulgada há cerca de um mês pelo Blog do BG, a corrida para o Senado Federal mostrou uma projeção crescente do Capitão Styvenson. O candidato da Rede que tinha 16,3% na terceira posição passou para 21%, um crescimento de praticamente 5%.</p>
+<p>Garibaldi e Zenaide, há cerca de um mês, tinham 16,6% e 16,5%, respectivamente. Contudo, na pesquisa divulgada nesta segunda-feira (27), Zenaide, mesmo dentro da margem de erro, ultrapassa Garibaldi. Ela aparece com 14% e ele com 13%. É possível notar também a queda nas intenções de voto de ambos.</p>
+<p>Geraldo Melo e Antônio Jácoma mantiveram os mesmos percentuais de votos, o que pode ser analisado tanto como um teto das intenções de voto. Geraldo tinha tinha 9,2% na última pesquisa e agora tem 9%. Jácome caiu de 5,7% para 5%.</p>
+<p><strong>Pesquisa de 27/08</strong></p>
+<p>A pesquisa do instituto Seta, publicada pelo Blog do BG, foi realizada com 1300 entrevistados de todas as regiões do Estado entre os dias 18 e 20 de agosto. Ela foi calculada com margem de erro de 3% para mais ou para menos e grau de confiança de 95%. Os dados estão registrados na Justiça Eleitoral sob os protocolos RN-05667/2018 e BR-00927/2018.</p>
+<p><strong>Pesquisa de 07/08</strong></p>
+<p>A coleta dos dados aconteceu entre os dias 31 de julho e 2 de agosto com 1100 entrevistados. A pesquisa foi calculada com margem de erro de 3,5% para mais ou para menos e com grau de confiança de 95%. Ela foi registrada na Justiça Eleitoral sob os protocolos RN-09856/2018 e BR-05663/2018.</p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/pesquisa-bg-seta-em-um-mes-styvenson-cresce-5-e-zenaide-ultrapassa-garibaldi/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=PESQUISA%20BLOG%20DO%20BG%2FSETA%3A%20Em%20um%20m%C3%AAs%2C%20Styvenson%20cresce%205%25%20e%20Zenaide%20ultrapassa%20Garibaldi%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-bg-seta-em-um-mes-styvenson-cresce-5-e-zenaide-ultrapassa-garibaldi%2F" data-text="PESQUISA BLOG DO BG/SETA: Em um mês, Styvenson cresce 5% e Zenaide ultrapassa Garibaldi" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+ </a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=PESQUISA%20BLOG%20DO%20BG%2FSETA%3A%20Em%20um%20m%C3%AAs%2C%20Styvenson%20cresce%205%25%20e%20Zenaide%20ultrapassa%20Garibaldi%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-bg-seta-em-um-mes-styvenson-cresce-5-e-zenaide-ultrapassa-garibaldi%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/pesquisa-bg-seta-em-um-mes-styvenson-cresce-5-e-zenaide-ultrapassa-garibaldi/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=PESQUISA%20BLOG%20DO%20BG%2FSETA%3A%20Em%20um%20m%C3%AAs%2C%20Styvenson%20cresce%205%25%20e%20Zenaide%20ultrapassa%20Garibaldi%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-bg-seta-em-um-mes-styvenson-cresce-5-e-zenaide-ultrapassa-garibaldi%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-4' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-4'); });
+          </script>
+</div>
+</article>
+<article class="post-489578 post type-post status-publish format-standard hentry category-judiciario">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T19:58:03+00:00">27/08/2018 às 19:58 em</time> <a href="https://www.blogdobg.com.br/category/judiciario/" rel="category tag">Judiciário</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/pesquisa-do-cnj-aponta-80-milhoes-de-processos-em-tramitacao-no-pais/">Pesquisa do CNJ aponta 80 milhões de processos em tramitação no país</a></h2>
+</header>
+<div class="entry-summary">
+<p><img data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/08/processos-1024x683.jpg" alt="" width="1024" height="683" class="aligncenter size-large wp-image-489579" style="display:none;visibility:hidden;" /><noscript><img src="https://assets.blogdobg.com.br/uploads/2018/08/processos-1024x683.jpg" alt="" width="1024" height="683" class="aligncenter size-large wp-image-489579" /></noscript></p>
+<p>O Conselho Nacional de Justiça (CNJ) informou hoje (27) que 80 milhões de processos estão em tramitação em todo o país e aguardam uma definição. Os dados fazem parte da pesquisa Justiça em Números, divulgada anualmente para orientar o trabalho de juízes e servidores da Justiça. Os números são referentes ao ano de 2017.</p>
+<p>A pesquisa também revelou que o ramo da Justiça que mais faz acordos de conciliação é a Trabalhista. Em todo o país, 25% dos casos foram resolvidos por meio de um acordo entre o trabalhador e o empregador.</p>
+<p>As despesas de todo o Poder Judiciário no ano passado foram R$ 90,8 bilhões, registrando aumento de 4,4% em relação a 2016. Segundo o levantamento, o total de gastos representa 1,4% do Produto Interno Bruto (PIB). As despesas com recursos humanos são responsáveis 90,5% do gasto total.</p>
+<p>&#8220;A despesa média do Poder Judiciário por magistrado foi de aproximadamente R$ 48,5 mil; por servidor, R$ 15,2 mil; por terceirizado foi de R$ 4,1 mil e por estagiário, R$ 828,76&#8243;, diz o relatório&#8221;.</p>
+<p>A pesquisa também mostrou que tempo médio de tramitação de uma sentença no Superior Tribunal de Justiça (STJ) é de 11 meses. No Tribunal Superior do Trabalho (TST), os ministros demoram cerca de 1 ano e dois meses para proferirem uma sentença.</p>
+<p>Na primeira instância, porta de entrada da ação na Justiça, a sentença demora cerca de 2 anos e seis meses para ser proferida. Na fase de execução, o tempo médio sobe para seis anos e quatro meses.</p>
+<p><strong>Agência Brasil</strong></p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/pesquisa-do-cnj-aponta-80-milhoes-de-processos-em-tramitacao-no-pais/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Pesquisa%20do%20CNJ%20aponta%2080%20milh%C3%B5es%20de%20processos%20em%20tramita%C3%A7%C3%A3o%20no%20pa%C3%ADs%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-do-cnj-aponta-80-milhoes-de-processos-em-tramitacao-no-pais%2F" data-text="Pesquisa do CNJ aponta 80 milhões de processos em tramitação no país" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Pesquisa%20do%20CNJ%20aponta%2080%20milh%C3%B5es%20de%20processos%20em%20tramita%C3%A7%C3%A3o%20no%20pa%C3%ADs%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-do-cnj-aponta-80-milhoes-de-processos-em-tramitacao-no-pais%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/pesquisa-do-cnj-aponta-80-milhoes-de-processos-em-tramitacao-no-pais/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Pesquisa%20do%20CNJ%20aponta%2080%20milh%C3%B5es%20de%20processos%20em%20tramita%C3%A7%C3%A3o%20no%20pa%C3%ADs%20https%3A%2F%2Fwww.blogdobg.com.br%2Fpesquisa-do-cnj-aponta-80-milhoes-de-processos-em-tramitacao-no-pais%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-5' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-5'); });
+          </script>
+</div>
+</article>
+<article class="post-489576 post type-post status-publish format-standard hentry category-tecnologia">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T19:55:29+00:00">27/08/2018 às 19:55 em</time> <a href="https://www.blogdobg.com.br/category/tecnologia/" rel="category tag">Tecnologia</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/novos-modelos-de-iphone-terao-tela-infinita-e-entrada-para-dois-chips/">Novos modelos de iPhone terão tela infinita e entrada para dois chips</a></h2>
+</header>
+<div class="entry-summary">
+<p><img data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/07/apple-logo-1024x686.jpg" alt="" width="1024" height="686" class="aligncenter size-large wp-image-484318" style="display:none;visibility:hidden;" /><noscript><img src="https://assets.blogdobg.com.br/uploads/2018/07/apple-logo-1024x686.jpg" alt="" width="1024" height="686" class="aligncenter size-large wp-image-484318" /></noscript></p>
+<p>Como acontece todos os anos desde 2007, a Apple prepara para as próximas semanas o lançamento de novos modelos de iPhone – tradicionalmente, a empresa apresenta inovações para sua linha de smartphones na primeira quinzena de setembro. Para 2018, disseram fontes próximas à Apple à agência Bloomberg, a empresa vai lançar três aparelhos com tela infinita, consagrando o design que trouxe ao mundo no ano passado com o iPhone X. </p>
+<p>Além disso, a empresa está de olho na demanda de mercados emergentes: segundo o analista, em entrevista à agência de notícias Bloomberg, dois dos modelos terão entrada para dois chips SIM – ótimo para quem tem um telefone pessoal e outro da empresa, por exemplo. Para quem anseia por grandes inovações, porém, é melhor esperar o ano que vem: segundo o analista Gene Munster, da Loup Ventures, a Apple deve trazer poucas mudanças significativas ao iPhone em 2018, tentando aproveitar a boa onda do mercado. </p>
+<p>Vale lembrar: no início deste mês, a empresa bateu a marca de US$ 1 trilhão em valor de mercado – e o principal culpado por isso foi o iPhone X. Lançado no ano passado e vendido a US$ 1 mil nos EUA, o aparelho mostrou com a empresa vender menos iPhones e faturar mais, mesmo em um momento que o mercado de smartphones global desacelera seu crescimento. </p>
+<p><strong>Link / Blog</strong></p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/novos-modelos-de-iphone-terao-tela-infinita-e-entrada-para-dois-chips/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Novos%20modelos%20de%20iPhone%20ter%C3%A3o%20tela%20infinita%20e%20entrada%20para%20dois%20chips%20https%3A%2F%2Fwww.blogdobg.com.br%2Fnovos-modelos-de-iphone-terao-tela-infinita-e-entrada-para-dois-chips%2F" data-text="Novos modelos de iPhone terão tela infinita e entrada para dois chips" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Novos%20modelos%20de%20iPhone%20ter%C3%A3o%20tela%20infinita%20e%20entrada%20para%20dois%20chips%20https%3A%2F%2Fwww.blogdobg.com.br%2Fnovos-modelos-de-iphone-terao-tela-infinita-e-entrada-para-dois-chips%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/novos-modelos-de-iphone-terao-tela-infinita-e-entrada-para-dois-chips/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Novos%20modelos%20de%20iPhone%20ter%C3%A3o%20tela%20infinita%20e%20entrada%20para%20dois%20chips%20https%3A%2F%2Fwww.blogdobg.com.br%2Fnovos-modelos-de-iphone-terao-tela-infinita-e-entrada-para-dois-chips%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-6' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-6'); });
+          </script>
+</div>
+</article>
+<article class="post-489573 post type-post status-publish format-standard hentry category-politica">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T19:53:10+00:00">27/08/2018 às 19:53 em</time> <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/ex-ministro-diz-que-stf-esta-sem-lideranca-e-deixou-de-defender-interesse-nacional/">Ex-ministro diz que STF está sem liderança e deixou de defender interesse nacional</a></h2>
+</header>
+<div class="entry-summary">
+<p><img data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/08/nelsom-jobin-e1528979967147-1024x578.jpg" alt="" width="1024" height="578" class="aligncenter size-large wp-image-489574" style="display:none;visibility:hidden;" /><noscript><img src="https://assets.blogdobg.com.br/uploads/2018/08/nelsom-jobin-e1528979967147-1024x578.jpg" alt="" width="1024" height="578" class="aligncenter size-large wp-image-489574" /></noscript></p>
+<p>Para o ex-ministro da Justiça e do Supremo Tribunal Federal (STF) Nelson Jobim, a Corte Suprema está &#8220;sem liderança, sem diálogo, sem comando, e lhe falta fraternidade&#8221;. Em palestra na tarde desta segunda-feira (27) na Associação dos Advogados de São Paulo, ele disse esperar que o próximo presidente do STF, Dias Toffoli, &#8220;tenha condições&#8221; de retomar uma gestão com esses atributos. Toffoli assume em 13 de setembro.</p>
+<p>No painel sobre as relações do STF com os outros poderes, Jobim disse que a intenção do ministro Marco Aurélio, ao propor a criação da TV Justiça, era dar destaque à transparência, mas se transformou em &#8220;instrumento de visibilidade&#8221;. &#8220;Alguns ministros precisam do STF para construir suas biografias&#8221;, afirmou. Segundo ele, a maneira mais &#8220;infantil&#8221; de fazer isso é o ministro se voltar contra o presidente que o indicou. A segunda maneira, mais sofisticada, é romper antiga jurisprudência para ficar com a &#8220;paternidade&#8221; de uma nova.</p>
+<p>&#8220;E renuncia-se à pauta para deixar de votar aquilo que tem que ser votado para resolver o interesse nacional&#8221;, acrescentou, sem citar nomes. &#8220;A falta de fraternidade leva ao conflito e à implosão do sistema, porque causa espanto e o que não causa espanto não é noticia&#8221;, acrescentou Jobim.</p>
+<p>O também ex-ministro do STF Cezar Peluso afirmou que tinha, no debate, a difícil tarefa de substituir o ex-ministro Sepúlveda Pertence, que não compareceu ao evento. &#8220;Alguns juízes transmitem a impressão de que sua missão não é julgar, mas condenar&#8221;, declarou, após avisar que falaria sobre o que o STF &#8220;não deve fazer&#8221;.</p>
+<p>Ele afirmou ainda que tem &#8220;ouvido dizer&#8221; que a magistratura está &#8220;acuada, pois nenhum juiz quer aparecer como inimigo da recuperação da moralidade&#8221;. Algumas decisões, acrescentou Peluso, pressupõem que alguns juízes atuam como &#8220;justiceiros&#8221;.</p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/ex-ministro-diz-que-stf-esta-sem-lideranca-e-deixou-de-defender-interesse-nacional/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Ex-ministro%20diz%20que%20STF%20est%C3%A1%20sem%20lideran%C3%A7a%20e%20deixou%20de%20defender%20interesse%20nacional%20https%3A%2F%2Fwww.blogdobg.com.br%2Fex-ministro-diz-que-stf-esta-sem-lideranca-e-deixou-de-defender-interesse-nacional%2F" data-text="Ex-ministro diz que STF está sem liderança e deixou de defender interesse nacional" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Ex-ministro%20diz%20que%20STF%20est%C3%A1%20sem%20lideran%C3%A7a%20e%20deixou%20de%20defender%20interesse%20nacional%20https%3A%2F%2Fwww.blogdobg.com.br%2Fex-ministro-diz-que-stf-esta-sem-lideranca-e-deixou-de-defender-interesse-nacional%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/ex-ministro-diz-que-stf-esta-sem-lideranca-e-deixou-de-defender-interesse-nacional/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Ex-ministro%20diz%20que%20STF%20est%C3%A1%20sem%20lideran%C3%A7a%20e%20deixou%20de%20defender%20interesse%20nacional%20https%3A%2F%2Fwww.blogdobg.com.br%2Fex-ministro-diz-que-stf-esta-sem-lideranca-e-deixou-de-defender-interesse-nacional%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-7' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-7'); });
+          </script>
+</div>
+</article>
+<article class="post-489571 post type-post status-publish format-standard hentry category-politica">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T19:23:49+00:00">27/08/2018 às 19:23 em</time> <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/meirelles-propoe-renegociacao-de-dividas-de-pessoas-fisicas/">Meirelles propõe renegociação de dívidas de pessoas físicas</a></h2>
+</header>
+<div class="entry-summary">
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/H5MQP8XIyug" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+<p>O candidato do MDB à Presidência da República, Henrique Meirelles, propôs criar um programa de renegociação de dívidas para as pessoas físicas, como já foi feito para as empresas. Ele não detalhou sua proposta, mas se disse comprometido com a diminuição dos juros e aumento do crédito para que as pessoas possam sair da “bola de neve” das dívidas. Para isso, defendeu o candidato, o país deve voltar a crescer e a gerar empregos.</p>
+<p>A proposta de Meirelles de socorrer os endividados foi apresentada na entrevista exclusiva concedida aos veículos da Empresa Brasil de Comunicação (EBC), nesta segunda-feira (27), em Brasília. Ele foi o terceiro presidenciável a participar da série de entrevistas, levadas ao ar, às 17h30, com transmissão da TV Brasil, Rádio Nacional, Portal EBC e A
+10f43
+gência Brasil.</p>
+<p>Participaram da entrevista Roseann Kennedy, mediadora, Luiza Damé, da Agência Brasil, Valter Lima, da Rádio Nacional, e Adalberto Piotto, da TV Brasil.</p>
+<p>Dividida em três blocos que somam 45 minutos, foi realizada ao vivo na sede da EBC, em Brasília. O objetivo da série de entrevistas é mostrar à população as propostas e ideias de todos os candidatos, enriquecendo o debate dos grandes temas nacionais.</p>
+<p><strong>Agência Brasil</strong></p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/meirelles-propoe-renegociacao-de-dividas-de-pessoas-fisicas/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Meirelles%20prop%C3%B5e%20renegocia%C3%A7%C3%A3o%20de%20d%C3%ADvidas%20de%20pessoas%20f%C3%ADsicas%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmeirelles-propoe-renegociacao-de-dividas-de-pessoas-fisicas%2F" data-text="Meirelles propõe renegociação de dívidas de pessoas físicas" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Meirelles%20prop%C3%B5e%20renegocia%C3%A7%C3%A3o%20de%20d%C3%ADvidas%20de%20pessoas%20f%C3%ADsicas%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmeirelles-propoe-renegociacao-de-dividas-de-pessoas-fisicas%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/meirelles-propoe-renegociacao-de-dividas-de-pessoas-fisicas/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Meirelles%20prop%C3%B5e%20renegocia%C3%A7%C3%A3o%20de%20d%C3%ADvidas%20de%20pessoas%20f%C3%ADsicas%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmeirelles-propoe-renegociacao-de-dividas-de-pessoas-fisicas%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-8' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-8'); });
+          </script>
+</div>
+</article>
+<article class="post-489567 post type-post status-publish format-standard hentry category-judiciario">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T19:18:45+00:00">27/08/2018 às 19:18 em</time> <a href="https://www.blogdobg.com.br/category/judiciario/" rel="category tag">Judiciário</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/tabela-do-frete-sera-decidida-em-plenario-diz-fux-apos-audiencia/">Tabela do frete será decidida em plenário, diz Fux após audiência</a></h2>
+</header>
+<div class="entry-summary">
+<figure id="attachment_489569" class="thumbnail wp-caption aligncenter" style="width: 754px"><img data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/08/antcrz_abr_2708184074.jpg" alt="" width="754" height="503" class="size-full wp-image-489569" style="display:none;visibility:hidden;" /><noscript><img src="https://assets.blogdobg.com.br/uploads/2018/08/antcrz_abr_2708184074.jpg" alt="" width="754" height="503" class="size-full wp-image-489569" /></noscript><figcaption class="caption wp-caption-text">Foto: Antonio Cruz/Agência Brasil</figcaption></figure>
+<p>Após uma audiência pública sobre a tabela de frete, nesta segunda-feira (27), o ministro Luiz Fux, do Supremo Tribunal Federal (STF), afirmou que não decidirá sozinho sobre o tema e que levará as três ações diretas de inconstitucionalidade (ADIs) sobre o assunto para análise diretamente no plenário da Corte.</p>
+<p>“Agora que temos informações suficientes, vou submeter os processos em conjunto, vamos julgar de forma mais breve possível a questão. Todas em conjunto, vou levar a plenário o mais breve possível”, disse Fux. A audiência também teve a participação do ministro Alexandre de Moraes.</p>
+<p>O tabelamento do frete foi enviado pelo governo do presidente Michel Temer para tramitação no Congresso como resultado da negociação que encerrou a paralisação nacional de 11 dias dos caminhoneiros em maio passado. A proposta foi aprovada e sancionada por Temer no início do mês.</p>
+<p>O ministro não quis dar previsão de quando liberaria as ações para julgamento. “Estabelecer prazo é criar especulação econômica, tudo que não queremos. O Supremo tem que garantir governabilidade”, afirmou Fux.</p>
+<p>Fux informou que, primeiro, enviará o caso para a manifestação dos órgãos competentes que ainda não deram parecer. Entre esses, está a Procuradoria-Geral da República (PGR). Somente depois desse trâmite, as ações devem ser remetidas ao plenário.</p>
+<p>Uma vez liberada pelo relator, caberá à presidência do STF marcar uma data para o julgamento das ações, o que não tem prazo para ocorrer. No dia 13 de setembro, a Corte muda de comando, e a ministra Cármen Lúcia passa o posto para o ministro Dias Toffoli.</p>
+<p><strong>Contra a tabela</strong></p>
+<p>Por cerca de quatro horas, Luiz Fux ouviu representantes do setor produtivo e dos caminhoneiros, que apresentaram argumentos contra e a favor da tabela mínima do frete, criada em maio pelo governo via medida provisória e convertida em lei pelo Congresso, neste mês.</p>
+<p>Representantes da indústria e do agronegócio criticaram duramente a medida, que dizem prejudicar a livre concorrência e provocar inflação, com aumento de preços, por exemplo, de produtos da cesta básica para o consumidor final.</p>
+<p>Na avaliação de Armando Castelar Pinheiro, representante da Confederação Nacional da Indústria (CNI), uma alta de até 12% nos custos do transporte, com impacto calculado pela entidade em R$ 53 bilhões por ano, deverá ser repassada ao consumidor final, em especial no setor alimentício.</p>
+<p>“Os consumidores mais pobres serão atingidos porque, para eles, os alimentos têm peso maior [no orçamento doméstico]”, disse Castelar. “Estamos dando para o elo mais fraco da sociedade a responsabilidade de pagar esse imenso custo de uma política equivocada sobre o sistema”.</p>
+<p>Também se posicionaram contrários a uma intervenção do governo no mercado, o Conselho Administrativo de Defesa Econômica (Cade), a Confederação Nacional dos Transportes (CNT) e a Confederação da Agricultura e Pecuária do Brasil (CNA). As entidades apelaram por uma decisão rápida para dirimir a insegurança jurídica que tem prejudicado o fechamento de contratos futuros.</p>
+<p>“Fazemos um apelo a esta casa [STF] para que não espere o próximo governante, para que não espere as próximas eleições, para que não espere a próxima semana”, disse o representante da CNA, Luiz Antonio Fayet.</p>
+<p><strong>Agência Brasil</strong></p>
+</div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/tabela-do-frete-sera-decidida-em-plenario-diz-fux-apos-audiencia/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Tabela%20do%20frete%20ser%C3%A1%20decidida%20em%20plen%C3%A1rio%2C%20diz%20Fux%20ap%C3%B3s%20audi%C3%AAncia%20https%3A%2F%2Fwww.blogdobg.com.br%2Ftabela-do-frete-sera-decidida-em-plenario-diz-fux-apos-audiencia%2F" data-text="Tabela do frete será decidida em plenário, diz Fux após audiência" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Tabela%20do%20frete%20ser%C3%A1%20decidida%20em%20plen%C3%A1rio%2C%20diz%20Fux%20ap%C3%B3s%20audi%C3%AAncia%20https%3A%2F%2Fwww.blogdobg.com.br%2Ftabela-do-frete-sera-decidida-em-plenario-diz-fux-apos-audiencia%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/tabela-do-frete-sera-decidida-em-plenario-diz-fux-apos-audiencia/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Tabela%20do%20frete%20ser%C3%A1%20decidida%20em%20plen%C3%A1rio%2C%20diz%20Fux%20ap%C3%B3s%20audi%C3%AAncia%20https%3A%2F%2Fwww.blogdobg.com.br%2Ftabela-do-frete-sera-decidida-em-plenario-diz-fux-apos-audiencia%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-9' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-9'); });
+          </script>
+</div>
+</article>
+<article class="post-489502 post type-post status-publish format-standard hentry category-financas category-politica tag-metade-dos-candidatos-ao-senado tag-suplentes-mais-ricos-que-eles">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T18:00:18+00:00">27/08/2018 às 18:00 em</time> <a href="https://www.blogdobg.com.br/category/financas/" rel="category tag">Finanças</a>, <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/metade-dos-candidatos-ao-senado-tem-suplentes-mais-ricos-que-eles/">Metade dos candidatos ao Senado tem suplentes ‘mais ricos’ que eles</a></h2>
+</header>
+<div class="entry-summary">
+<p style="text-align: center;"><strong><img class="size-full wp-image-489504 aligncenter" data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/08/senado-federal-22082018184016972.jpeg" alt="" width="460" height="305" style="display:none;visibility:hidden;" /><noscript><img class="size-full wp-image-489504 aligncenter" src="https://assets.blogdobg.com.br/uploads/2018/08/senado-federal-22082018184016972.jpeg" alt="" width="460" height="305" /></noscript>Foto: Edilson Rodrigues/Agência Senado &#8211; 14.11.2017</strong></p>
+<p>O Senado Federal vai eleger dois terços de seus integrantes nas eleições deste ano. Dos 351 candidatos em busca de uma cadeira na casa legislativa para os próximos oito anos, 162 (46%) possuem ao menos um suplente com patrimônio superior ao deles.</p>
+<p>Em um dos casos, verificado no Estado de Rondônia, o primeiro suplente de um candidato ao Senado diz ter mais de R$ 84 milhões em bens, valor 7.300% maior do que os R$ 1,1 milhão cadastrados pelo titular da chapa. O mesmo acontece no Tocantins, onde o suplente de um candidato sem patrimônio possui mais de R$ 407 milhões declarados.</p>
+<p>Com o fim do financiamento privado e a limitação dos gastos das campanhas, os cientistas políticos ouvidos pelo R7 avaliam que a presença de suplentes endinheirados nas chapas pode impulsionar as candidaturas.</p>
+<p>“O suplente que tem dinheiro pode usar seus próprios recursos para a campanha da chapa”, avalia o cientista político David Verge Fleischer, do Instituto de Ciência Política da UnB (Universidade de Brasília).</p>
+<p>Os dois suplentes foram incluídos na disputa eleitoral brasileira pelo Artigo 46 da Constituição Federal, de 1988. Desde então, eles assumem a cadeira do senador eleito sempre que o parlamentar se ausentar do cargo.</p>
+<p>Anteriormente, era possível que a cadeira de primeiro suplente do Senado fosse preenchida pelo segundo candidato mais votado do mesmo partido do vencedor, como aconteceu com o ex-presidente Fernando Henrique Cardoso nas eleições de 1978. Com 1.272.416 votos, o tucano assumiu a suplência de Franco Montoro, que foi escolhido por mais de 4 milhões de eleitores no pleito.</p>
+<p>O cientista político Ricardo Ismael, do departamento de ciências sociais da PUC-Rio, se posiciona como um crítico do modelo atual de eleições ao Senado e observa para a possibilidade de nomes que financiaram as campanhas assumirem os mandatos de políticos mais populares.</p>
+<p>“Se por acaso o senador eleito se afastar [do cargo], ele vai deixar a vaga para o suplente. Isso não é bom, porque, se você tiver um número muito grande de suplentes no Senado, são eles que acabam decidindo as votações”, diz Ismael, que completa: “As pessoas não votaram nos suplentes. Ninguém pensa em votar em um senador pelo suplente dele”.</p>
+<p><strong>Acordos</strong></p>
+<p>Dos 54 senadores eleitos em 2010, que tem este como o último ano de seus mandatos, 25% (14) não aparecem no exercício do cargo no início do segundo semestre de 2018.</p>
+<p>Fleischer afirma que o número de suplentes na atual legislatura é “muito alto” e destaca que muitas vezes os senadores fazem pactos com os suplentes para que eles possam assumir a cadeira da chapa.</p>
+<p>Candidatos com nomes bizarros vão chamar atenção no horário eleitoral</p>
+<p>&#8220;O mandato é de oito anos e as vezes ocorrem acordos entre os titulares e os suplentes para que o senador pegue um número determinado de licenças ao longo do mandato para permitir que o suplente assuma&#8221;, revela o professor da UnB.</p>
+<p>Caso assuma o mandato provisoriamente, os suplentes têm o direito de receber todos os salários e benefícios pagos aos parlamentares eleitos.</p>
+<p><strong>R7</strong></p>
+<p>&nbsp;</p>
+</div>
+<div class="related-tags clearfix">
+<i class="fa fa-tags"></i>
+<p><a href="https://www.blogdobg.com.br/tag/metade-dos-candidatos-ao-senado/" rel="tag">Metade dos candidatos ao Senado</a> - <a href="https://www.blogdobg.com.br/tag/suplentes-mais-ricos-que-eles/" rel="tag">suplentes ‘mais ricos’ que eles</a></p> </div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/metade-dos-candidatos-ao-senado-tem-suplentes-mais-ricos-que-eles/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Metade%20dos%20candidatos%20ao%20Senado%20tem%20suplentes%20%E2%80%98mais%20ricos%E2%80%99%20que%20eles%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmetade-dos-candidatos-ao-senado-tem-suplentes-mais-ricos-que-eles%2F" data-text="Metade dos candidatos ao Senado tem suplentes ‘mais ricos’ que eles" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Metade%20dos%20candidatos%20ao%20Senado%20tem%20suplentes%20%E2%80%98mais%20ricos%E2%80%99%20que%20eles%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmetade-dos-candidatos-ao-senado-tem-suplentes-mais-ricos-que-eles%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/metade-dos-candidatos-ao-senado-tem-suplentes-mais-ricos-que-eles/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Metade%20dos%20candidatos%20ao%20Senado%20tem%20suplentes%20%E2%80%98mais%20ricos%E2%80%99%20que%20eles%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmetade-dos-candidatos-ao-senado-tem-suplentes-mais-ricos-que-eles%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-10' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-10'); });
+          </script>
+</div>
+</article>
+<article class="post-489510 post type-post status-publish format-standard hentry category-diversos category-judiciario tag-combate-a-fraudes tag-estelionato-no-inss tag-justica-federal-do-rn tag-mobiliza-orgaos-federais">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T17:30:50+00:00">27/08/2018 às 17:30 em</time> <a href="https://www.blogdobg.com.br/category/diversos/" rel="category tag">Diversos</a>, <a href="https://www.blogdobg.com.br/category/judiciario/" rel="category tag">Judiciário</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/justica-federal-do-rn-mobiliza-orgaos-federais-no-combate-a-fraudes-de-estelionato-no-inss/">Justiça Federal do RN mobiliza órgãos federais no combate a fraudes de estelionato no INSS</a></h2>
+</header>
+<div class="entry-summary">
+<p>Com o crescente aumento do número de fraudes de estelionato contra o INSS, a partir do recebimento de benefícios “post mortem”, o Grupo de Monitoramento e Fiscalização do Sistema Carcerário (GMF), coordenado pelo Juiz Federal Walter Nunes da Silva Júnior, reuniu-se com representantes do INSS e do Ministério Público Federal para adotar rotinas que coíbam o crime.</p>
+<p>Durante a reunião, tanto o INSS quanto o MPF admitiram falhas na comunicação quanto à informação da morte do beneficiário. Uma das alternativas que estão sendo estudadas é simplificar o trâmite de comunicação da morte do beneficiário, incluindo hospitais no processo.</p>
+<p>Também foi definida pela emissão de uma recomendação para a Secretaria Estadual de Saúde, hospitais municipais e Prefeituras (inclusive cemitérios) para comunicação ao INSS. Inicialmente a informação será enviada por e-mail, mas a proposta é que, posteriormente, o sistema seja aperfeiçoado para fazer o cruzamento de dados nacional entre o Ministério da Saúde e o INSS.</p>
+<p>Outra sugestão posta foi que o órgão de seguridade social exija dos bancos biometria para as pessoas receberem os benefícios, além de um banco de imagens, ou seja, gravações dos dias destinados ao recebimento do dinheiro.</p>
+</div>
+<div class="related-tags clearfix">
+<i class="fa fa-tags"></i>
+<p><a href="https://www.blogdobg.com.br/tag/combate-a-fraudes/" rel="tag">combate a fraudes</a> - <a href="https://www.blogdobg.com.br/tag/estelionato-no-inss/" rel="tag">estelionato no INSS</a> - <a href="https://www.blogdobg.com.br/tag/justica-federal-do-rn/" rel="tag">Justiça Federal do RN</a> - <a href="https://www.blogdobg.com.br/tag/mobiliza-orgaos-federais/" rel="tag">mobiliza órgãos federais</a></p> </div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/justica-federal-do-rn-mobiliza-orgaos-federais-no-combate-a-fraudes-de-estelionato-no-inss/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Justi%C3%A7a%20Federal%20do%20RN%20mobiliza%20%C3%B3rg%C3%A3os%20federais%20no%20combate%20a%20fraudes%20de%20estelionato%20no%20INSS%20https%3A%2F%2Fwww.blogdobg.com.br%2Fjustica-federal-do-rn-mobiliza-orgaos-federais-no-combate-a-fraudes-de-estelionato-no-inss%2F" data-text="Justiça Federal do RN mobiliza órgãos federais no combate a fraudes de estelionato no INSS" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Justi%C3%A7a%20Federal%20do%20RN%20mobiliza%20%C3%B3rg%C3%A3os%20federais%20no%20combate%20a%20fraudes%20de%20estelionato%20no%20INSS%20https%3A%2F%2Fwww.blogdobg.com.br%2Fjustica-federal-do-rn-mobiliza-orgaos-federais-no-combate-a-fraudes-de-estelionato-no-inss%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/justica-federal-do-rn-mobiliza-orgaos-federais-no-combate-a-fraudes-de-estelionato-no-inss/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Justi%C3%A7a%20Federal%20do%20RN%20mobiliza%20%C3%B3rg%C3%A3os%20federais%20no%20combate%20a%20fraudes%20de%20estelionato%20no%20INSS%20https%3A%2F%2Fwww.blogdobg.com.br%2Fjustica-federal-do-rn-mobiliza-orgaos-federais-no-combate-a-fraudes-de-estelionato-no-inss%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-11' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-11'); });
+          </script>
+</div>
+</article>
+<article class="post-489563 post type-post status-publish format-standard hentry category-judiciario category-politica tag-disson-lisboa tag-nao-podera-receber-recursos-do-fundo-partidario tag-nem-utilizar-horario-eleitoral">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T17:24:32+00:00">27/08/2018 às 17:24 em</time> <a href="https://www.blogdobg.com.br/category/judiciario/" rel="category tag">Judiciário</a>, <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/disson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral/">Disson Lisboa não poderá receber recursos do fundo partidário nem utilizar horário eleitoral</a></h2>
+</header>
+<div class="entry-summary">
+<p>Atendendo a pedido do Ministério Público Eleitoral, a Justiça Eleitoral determinou nesse domingo, 26 de agosto, a suspensão do repasse de recursos do Fundo Partidário e do Fundo Especial de Financiamento de Campanha a Rudson Raimundo Honório Lisboa (Disson), que concorre ao cargo de deputado estadual. A decisão suspende, ainda, a utilização do horário eleitoral gratuito pelo candidato.</p>
+<p>As medidas foram deferidas em ação de impugnação de registro de candidatura ajuizada pelo MP Eleitoral, com pedido de tutela antecipada. A ação sustenta que o candidato ostenta uma clara e incontroversa inelegibilidade, pois teve decretada a suspensão dos direitos políticos em condenação criminal transitada em julgado (sem possibilidade de recursos). Rudson Lisboa é condenado por crime contra a administração e o patrimônio público, incidindo portanto em inelegibilidade prevista na chamada Lei da Ficha Limpa.</p>
+<p>“Cuidando-se de verba pública, tais recursos só devem ser repassados a candidatos que efetivamente estejam aptos a concorrer ao pleito eleitoral, sob pena de desvirtuamento do ordenamento jurídico-eleitoral, que visa expurgar do processo eleitoral candidatos inelegíveis, por inobservância à probidade e moralidade no desempenho do mandato”, destaca a decisão.</p>
+<p>Para o MP Eleitoral, o perigo de dano ou risco ao resultado útil do processo vem “do prejuízo à escolha consciente do eleitor comum, influenciado pela falsa aparência de viabilidade de candidatura que, de fato e de direito, é absolutamente inviável”.</p>
+<p>De acordo com a decisão, caso os recursos do Fundo Partidário e do Fundo Especial de Financiamento de Campanha já tenham sido disponibilizados ao candidato deverá ser efetuado depósito em conta bancária judicial do montante equivalente a tais verbas, no prazo improrrogável de dois dias. Há multa prevista no valor de R$ 20 mil por dia, caso descumprida a decisão.</p>
+<p><strong>Com informações do MPF-RN</strong></p>
+</div>
+<div class="related-tags clearfix">
+<i class="fa fa-tags"></i>
+<p><a href="https://www.blogdobg.com.br/tag/disson-lisboa/" rel="tag">Disson Lisboa</a> - <a href="https://www.blogdobg.com.br/tag/nao-podera-receber-recursos-do-fundo-partidario/" rel="tag">não poderá receber recursos do fundo partidário</a> - <a href="https://www.blogdobg.com.br/tag/nem-utilizar-horario-eleitoral/" rel="tag">nem utilizar horário eleitoral</a></p> </div>
+
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/disson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTAR (1)</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Disson%20Lisboa%20n%C3%A3o%20poder%C3%A1%20receber%20recursos%20do%20fundo%20partid%C3%A1rio%20nem%20utilizar%20hor%C3%A1rio%20eleitoral%20https%3A%2F%2Fwww.blogdobg.com.br%2Fdisson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral%2F" data-text="Disson Lisboa não poderá receber recursos do fundo partidário nem utilizar horário eleitoral" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Disson%20Lisboa%20n%C3%A3o%20poder%C3%A1%20receber%20recursos%20do%20fundo%20partid%C3%A1rio%20nem%20utilizar%20hor%C3%A1rio%20eleitoral%20https%3A%2F%2Fwww.blogdobg.com.br%2Fdisson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/disson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Disson%20Lisboa%20n%C3%A3o%20poder%C3%A1%20receber%20recursos%20do%20fundo%20partid%C3%A1rio%20nem%20utilizar%20hor%C3%A1rio%20eleitoral%20https%3A%2F%2Fwww.blogdobg.com.br%2Fdisson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+<div class="entry-comments clearfix">
+<a href="https://www.blogdobg.com.br/disson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral/#comments" class="comment-list">OPINIÃO DOS LEITORES:</a>
+</div>
+<section id="comments">
+<ol class="media-list">
+<li class="comment even thread-even depth-1" id="comment-331278">
+<div id="div-comment-331278" class="comment-body">
+<div class="comment-author vcard">
+<cite class="fn">Thiago</cite> <span class="says">disse:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.blogdobg.com.br/disson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral/#comment-331278">
+27/08/2018 às 19:30</a> </div>
+<p>Falamos de Lula, Bolsonaro, Sérgio Cabral, mas não olhamos para o nosso umbigo. Temos um bancada úmida, quer conhecer esse sujeito? Coloque o nome dele no Google</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.blogdobg.com.br/disson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral/?replytocom=331278#respond' onclick='return addComment.moveForm( "div-comment-331278", "331278", "respond", "489563" )' aria-label='Responder para Thiago'>Responder</a></div>
+</div>
+</li>
+</ol>
+</section>
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-12' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-12'); });
+          </script>
+</div>
+</article>
+<article class="post-489533 post type-post status-publish format-standard hentry category-comportamento category-diversos tag-namoro-ioio tag-pode-ser-prejudicar tag-revela-novo-estudo tag-saude-mental">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T17:20:17+00:00">27/08/2018 às 17:20 em</time> <a href="https://www.blogdobg.com.br/category/comportamento/" rel="category tag">Comportamento</a>, <a href="https://www.blogdobg.com.br/category/diversos/" rel="category tag">Diversos</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/namoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo/">Namoro ioiô pode ser prejudicar saúde mental, revela novo estudo</a></h2>
+</header>
+<div class="entry-summary">
+<p style="text-align: center;"><strong><img class="size-full wp-image-489535 aligncenter" data-cfsrc="https://assets.blogdobg.com.br/uploads/2018/08/ross-david-schwimmer-e-rachel-jennifer-aniston-em-friends-1528315458576_v2_900x506.jpg" alt="" width="900" height="506" style="display:none;visibility:hidden;" /><noscript><img class="size-full wp-image-489535 aligncenter" src="https://assets.blogdobg.com.br/uploads/2018/08/ross-david-schwimmer-e-rachel-jennifer-aniston-em-friends-1528315458576_v2_900x506.jpg" alt="" width="900" height="506" /></noscript>Ross (David Schwimmer) e Rachel (Jennifer Aniston) em &#8220;Friends&#8221;. Imagem: Divulgação</strong></p>
+<p>Pode parecer muito bonitinho na ficção &#8211; como Ross e Rachel de &#8220;Friends&#8221;, mas dar mais uma chance ao amor (ou várias) pode ser uma bomba para sua cabeça. Segundo estudo da Universidade de Missouri (EUA), terminar e voltar várias vezes com a mesma pessoa prejudica, e muito, a saúde mental.</p>
+<p>Entre os mais de 500 pesquisados, 60% já esteve neste tipo de relacionamento e mais de um terço dos casais que moram juntos já se separaram e voltaram em algum momento.</p>
+<p>Comparados a outros namoros sem esse padrão, os casai &#8220;ioiô&#8221; apresentam maiores taxas de abuso, comunicação pior e menores níveis de compromisso. Além disso, o vai e volta de um Relacionamento está associado a sintomas mais frequentes e depressão e ansiedade.</p>
+<p>Kale Monk, o especialista que conduziu o estudo, dá algumas dicas para deixar esse padrão de lado, ou menos nocivo: saber se o término é sempre motivado pelo mesmo motivo e se faz sentido insistir, conversar sobre as razões do término – a não ser quando envolve violência, pensar sobre quais motivos levam o casal a voltar e se eles satisfazem o casal, ter em mente que não é problema dar fim a um relacionamento tóxico, procurar aconselhamento ou terapia de casal.</p>
+<p><strong>Universa &#8211; UOL</strong></p>
+<p>&nbsp;</p>
+</div>
+<div class="related-tags clearfix">
+<i class="fa fa-tags"></i>
+<p><a href="https://www.blogdobg.com.br/tag/namoro-ioio/" rel="tag">Namoro ioiô</a> - <a href="https://www.blogdobg.com.br/tag/pode-ser-prejudicar/" rel="tag">pode ser prejudicar</a> - <a href="https://www.blogdobg.com.br/tag/revela-novo-estudo/" rel="tag">revela novo estudo</a> - <a href="https://www.blogdobg.com.br/tag/saude-mental/" rel="tag">saúde mental</a></p> </div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/namoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTAR (1)</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=Namoro%20ioi%C3%B4%20pode%20ser%20prejudicar%20sa%C3%BAde%20mental%2C%20revela%20novo%20estudo%20https%3A%2F%2Fwww.blogdobg.com.br%2Fnamoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo%2F" data-text="Namoro ioiô pode ser prejudicar saúde mental, revela novo estudo" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=Namoro%20ioi%C3%B4%20pode%20ser%20prejudicar%20sa%C3%BAde%20mental%2C%20revela%20novo%20estudo%20https%3A%2F%2Fwww.blogdobg.com.br%2Fnamoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/namoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=Namoro%20ioi%C3%B4%20pode%20ser%20prejudicar%20sa%C3%BAde%20mental%2C%20revela%20novo%20estudo%20https%3A%2F%2Fwww.blogdobg.com.br%2Fnamoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+<div class="entry-comments clearfix">
+<a href="https://www.blogdobg.com.br/namoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo/#comments" class="comment-list">OPINIÃO DOS LEITORES:</a>
+</div>
+<section id="comments">
+<ol class="media-list">
+<li class="comment even thread-even depth-1" id="comment-331261">
+<div id="div-comment-331261" class="comment-body">
+<div class="comment-author vcard">
+<cite class="fn">Eduardo Peixoto</cite> <span class="says">disse:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.blogdobg.com.br/namoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo/#comment-331261">
+27/08/2018 às 17:42</a> </div>
+<p>É o tipo de namoro preferido pelo corno drone, ou seja, é aquele que quando vai chegando em casa, os chifres já estão rodando.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.blogdobg.com.br/namoro-ioio-pode-ser-prejudicar-saude-mental-revela-novo-estudo/?replytocom=331261#respond' onclick='return addComment.moveForm( "div-comment-331261", "331261", "respond", "489533" )' aria-label='Responder para Eduardo Peixoto'>Responder</a></div>
+</div>
+</li>
+</ol>
+</section>
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-13' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-13'); });
+          </script>
+</div>
+</article>
+<article class="post-489560 post type-post status-publish format-standard hentry category-judiciario category-politica tag-falsidade-ideologica tag-fraude-em-licitacao tag-grande-natal tag-mprn-denuncia-prefeito tag-por-corrupcao-passiva">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T17:16:34+00:00">27/08/2018 às 17:16 em</time> <a href="https://www.blogdobg.com.br/category/judiciario/" rel="category tag">Judiciário</a>, <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/mprn-denuncia-prefeito-na-grande-natal-por-corrupcao-passiva-falsidade-ideologica-e-fraude-em-licitacao/">MPRN denuncia prefeito na Grande Natal por corrupção passiva, falsidade ideológica e fraude em licitação</a></h2>
+</header>
+<div class="entry-summary">
+<p>O Ministério Público do Rio Grande do Norte (MPRN), através do procurador-geral de Justiça, denunciou o prefeito de Ielmo Marinho, Cássio Cavalcante de Castro, pelos crimes de corrupção passiva, falsidade ideológica e fraude em licitação. A denúncia foi protocolada nesta segunda-feira (27) junto ao Tribunal de Justiça estadual e ainda está sob sigilo.</p>
+<p>A investigação do MPRN aponta que Cássio Cavalcante, através de um secretário municipal, solicitou vantagem indevida a empresas denunciadas na operação Cidade Luz, deflagrada em julho de 2017 para apurar fraudes no setor de iluminação pública de Natal.</p>
+<p>Em relação à fraude em licitação, o prefeito deixou de observar as formalidades pertinentes quando autorizou a contratação de uma empresa por meio da “montagem” de um procedimento de Dispensa de Licitação. Além disso, Cássio Cavalcante inseriu declaração falsa em documento público para alterar a verdade sobre fato juridicamente relevante, o que configura a falsidade ideológica.</p>
+<p>A investigação do MPRN tem por base as colaborações premiadas de dois empresários presos na operação Cidade Luz. Eles apresentaram documentos que comprovam o envolvimento do prefeito nos crimes. O depoimento de um secretário municipal de Ielmo Marinho também reforça as provas contra Cássio Cavalcante.</p>
+<p>Na denúncia, o MPRN pediu que Cássio Cavalcante de Castro seja notificado e que, querendo, apresente defesa no prazo de 15 dias. O MPRN requereu ainda que, com o trânsito em julgado, além de condenado pelos crimes, o prefeito tenha os direitos políticos suspensos durante o prazo da condenação.</p>
+<p><strong>Com informações do MPRN</strong></p>
+</div>
+<div class="related-tags clearfix">
+<i class="fa fa-tags"></i>
+<p><a href="https://www.blogdobg.com.br/tag/falsidade-ideologica/" rel="tag">Falsidade ideológica</a> - <a href="https://www.blogdobg.com.br/tag/fraude-em-licitacao/" rel="tag">fraude em licitação</a> - <a href="https://www.blogdobg.com.br/tag/grande-natal/" rel="tag">Grande natal</a> - <a href="https://www.blogdobg.com.br/tag/mprn-denuncia-prefeito/" rel="tag">MPRN denuncia prefeito</a> - <a href="https://www.blogdobg.com.br/tag/por-corrupcao-passiva/" rel="tag">por corrupção passiva</a></p> </div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/mprn-denuncia-prefeito-na-grande-natal-por-corrupcao-passiva-falsidade-ideologica-e-fraude-em-licitacao/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTE AQUI</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=MPRN%20denuncia%20prefeito%20na%20Grande%20Natal%20por%20corrup%C3%A7%C3%A3o%20passiva%2C%20falsidade%20ideol%C3%B3gica%20e%20fraude%20em%20licita%C3%A7%C3%A3o%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmprn-denuncia-prefeito-na-grande-natal-por-corrupcao-passiva-falsidade-ideologica-e-fraude-em-licitacao%2F" data-text="MPRN denuncia prefeito na Grande Natal por corrupção passiva, falsidade ideológica e fraude em licitação" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=MPRN%20denuncia%20prefeito%20na%20Grande%20Natal%20por%20corrup%C3%A7%C3%A3o%20passiva%2C%20falsidade%20ideol%C3%B3gica%20e%20fraude%20em%20licita%C3%A7%C3%A3o%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmprn-denuncia-prefeito-na-grande-natal-por-corrupcao-passiva-falsidade-ideologica-e-fraude-em-licitacao%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/mprn-denuncia-prefeito-na-grande-natal-por-corrupcao-passiva-falsidade-ideologica-e-fraude-em-licitacao/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=MPRN%20denuncia%20prefeito%20na%20Grande%20Natal%20por%20corrup%C3%A7%C3%A3o%20passiva%2C%20falsidade%20ideol%C3%B3gica%20e%20fraude%20em%20licita%C3%A7%C3%A3o%20https%3A%2F%2Fwww.blogdobg.com.br%2Fmprn-denuncia-prefeito-na-grande-natal-por-corrupcao-passiva-falsidade-ideologica-e-fraude-em-licitacao%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-14' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-14'); });
+          </script>
+</div>
+</article>
+<article class="post-489537 post type-post status-publish format-standard hentry category-politica tag-com-orgulho tag-jean-wyllys-pede tag-maconheiros-se-assumam">
+<header>
+<div class="entry-meta"><time class="published" datetime="2018-08-27T17:10:57+00:00">27/08/2018 às 17:10 em</time> <a href="https://www.blogdobg.com.br/category/politica/" rel="category tag">Política</a></div>
+<h2 class="entry-title"><a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/">VÍDEO: Jean Wyllys pede que maconheiros &#8216;saíam do armário&#8217; e &#8216;se assumam com orgulho&#8217;</a></h2>
+</header>
+<div class="entry-summary">
+<p>O candidato a Deputado Federal pelo Rio de Janeiro (Psol) protagonizou um vídeo polêmico, considerado por muitos internautas como uma apologia ao uso da maconha. A entrevista no canal Cabeça Hare ganhou repercussão nos últimos dias, com debates entre críticos e apoiadores do movimento.</p>
+<p>No vídeo abaixo, Jean Wyllys se dirige aos maconheiros e pede para que eles se unam e “saíam do armário “.</p>
+<div class="entry-content-asset"><iframe width="1140" height="641" src="https://www.youtube.com/embed/lcWLTQt0en0?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+<p><strong>Com acréscimo de informações de O Povo</strong></p>
+</div>
+<div class="related-tags clearfix">
+<i class="fa fa-tags"></i>
+<p><a href="https://www.blogdobg.com.br/tag/com-orgulho/" rel="tag">com orgulho</a> - <a href="https://www.blogdobg.com.br/tag/jean-wyllys-pede/" rel="tag">Jean Wyllys pede</a> - <a href="https://www.blogdobg.com.br/tag/maconheiros-se-assumam/" rel="tag">maconheiros se assumam</a></p> </div>
+<div class="post-bottom">
+<div class="comment-button">
+<a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/#comente">
+<div class="button">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments" style="display:none;visibility:hidden;"><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/icon-comments.png" alt="Comments"></noscript><p>COMENTAR (5)</p>
+</div>
+</a>
+</div>
+<div class="social">
+<ul class="clearfix">
+<li>
+<a title="Whatsapp" class="whatsapp fa-stack mobile" href="whatsapp://send?text=V%C3%8DDEO%3A%20Jean%20Wyllys%20pede%20que%20maconheiros%20%26%238216%3Bsa%C3%ADam%20do%20arm%C3%A1rio%26%238217%3B%20e%20%26%238216%3Bse%20assumam%20com%20orgulho%26%238217%3B%20https%3A%2F%2Fwww.blogdobg.com.br%2Fvideo-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho%2F" data-text="VÍDEO: Jean Wyllys pede que maconheiros &#8216;saíam do armário&#8217; e &#8216;se assumam com orgulho&#8217;" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+<a title="Whatsapp" class="whatsapp fa-stack desktop" href="https://api.whatsapp.com/send?text=V%C3%8DDEO%3A%20Jean%20Wyllys%20pede%20que%20maconheiros%20%26%238216%3Bsa%C3%ADam%20do%20arm%C3%A1rio%26%238217%3B%20e%20%26%238216%3Bse%20assumam%20com%20orgulho%26%238217%3B%20https%3A%2F%2Fwww.blogdobg.com.br%2Fvideo-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho%2F" data-href="">
+<img style="width: 58px;" src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.svg" class="img-responsive" />
+</a>
+</li>
+<li>
+
+<a title="Facebook" class="facebook fa-stack" rel="nofollow" target="_blank" href="https://www.facebook.com/share.php?u=https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x"></i>
+</a>
+</li>
+<li>
+<a title="Twitter" class="twitter fa-stack" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text=V%C3%8DDEO%3A%20Jean%20Wyllys%20pede%20que%20maconheiros%20%26%238216%3Bsa%C3%ADam%20do%20arm%C3%A1rio%26%238217%3B%20e%20%26%238216%3Bse%20assumam%20com%20orgulho%26%238217%3B%20https%3A%2F%2Fwww.blogdobg.com.br%2Fvideo-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho%2F">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x"></i>
+</a>
+</li>
+</ul>
+</div> </div>
+<div class="post-comments">
+<div class="entry-comments clearfix">
+<a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/#comments" class="comment-list">OPINIÃO DOS LEITORES:</a>
+</div>
+<section id="comments">
+<ol class="media-list">
+<li class="comment even thread-even depth-1" id="comment-331283">
+<div id="div-comment-331283" class="comment-body">
+<div class="comment-author vcard">
+<cite class="fn">P grossa</cite> <span class="says">disse:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/#comment-331283">
+27/08/2018 às 19:58</a> </div>
+<p>Tem sempre um idiota pra apoiar e votar num calhorda desse, o que esse fdp contribui de positivo pra sociedade. Nunca acrescenta algo positivo nas questões que levanta.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/?replytocom=331283#respond' onclick='return addComment.moveForm( "div-comment-331283", "331283", "respond", "489537" )' aria-label='Responder para P grossa'>Responder</a></div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-331274">
+<div id="div-comment-331274" class="comment-body">
+<div class="comment-author vcard">
+<cite class="fn">Socorro</cite> <span class="says">disse:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/#comment-331274">
+27/08/2018 às 18:58</a> </div>
+<p>Não sei se o pior é falar ou publicar uma pérola dessa.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/?replytocom=331274#respond' onclick='return addComment.moveForm( "div-comment-331274", "331274", "respond", "489537" )' aria-label='Responder para Socorro'>Responder</a></div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-331262">
+<div id="div-comment-331262" class="comment-body">
+<div class="comment-author vcard">
+<cite class="fn">Thomaz</cite> <span class="says">disse:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/#comment-331262">
+27/08/2018 às 17:43</a> </div>
+<p>A maconha. Jean wilis só pede o voto dos esquizo.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/?replytocom=331262#respond' onclick='return addComment.moveForm( "div-comment-331262", "331262", "respond", "489537" )' aria-label='Responder para Thomaz'>Responder</a></div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-331260">
+<div id="div-comment-331260" class="comment-body">
+<div class="comment-author vcard">
+<cite class="fn">Thomaz</cite> <span class="says">disse:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/#comment-331260">
+27/08/2018 às 17:42</a> </div>
+<p>Estudos mostram que é o maior desencadeante de esquizofrenia .</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/?replytocom=331260#respond' onclick='return addComment.moveForm( "div-comment-331260", "331260", "respond", "489537" )' aria-label='Responder para Thomaz'>Responder</a></div>
+</div>
+<ul class="children">
+<li class="comment even depth-2" id="comment-331277">
+<div id="div-comment-331277" class="comment-body">
+<div class="comment-author vcard">
+<cite class="fn">Flávio</cite> <span class="says">disse:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/#comment-331277">
+27/08/2018 às 19:26</a> </div>
+<p>Eu sei o que desencadea nesse povo, mas não posso escrever aqui.</p>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+</div>
+</article>
+<article class="post col-xs-12 col-sm-12 content-ads">
+<div id='div-gpt-ad-1507575686775-15' style="margin: 0 auto; width: fit-content;">
+<script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1507575686775-15'); });
+          </script>
+</div>
+</article>
+<div class="navigation"><ul>
+<li class="active"><a href="https://www.blogdobg.com.br/">1</a></li>
+<li><a href="https://www.blogdobg.com.br/page/2/">2</a></li>
+<li><a href="https://www.blogdobg.com.br/page/3/">3</a></li>
+<li>…</li>
+<li><a href="https://www.blogdobg.com.br/page/7033/">7033</a></li>
+<li><a href="https://www.blogdobg.com.br/page/2/">Próxima Página &raquo;</a></li>
+</ul></div>
+</section>
+<aside id="sidebar" class="sidebar col-sm-4 navbar-right" role="complementary">
+<article class="content-ads clearfix">
+<div id='div-gpt-ad-1508862982389-0' style="margin: 0 auto; width: fit-content;">
+<script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1508862982389-0'); });
+      </script>
+</div>
+</article>
+
+<div id="last-comments">
+<h3>Últimos comentários</h3>
+<ul>
+<li>
+<a href="https://www.blogdobg.com.br/video-jean-wyllys-pede-que-maconheiros-se-assumam-com-orgulho/">
+<span class="rc-reviewer">P grossa</span> em:
+<p class="rc-post">VÍDEO: Jean Wyllys pede que maconheiros &#8216;...</p>
+<p class="rc-excerpt">Tem sempre um idiota pra apoiar e votar num calhorda desse, o que esse fdp contribui de positivo pra sociedade. Nunca acrescenta algo positivo nas questões que levanta.</p>
+</a>
+</li>
+<li>
+<a href="https://www.blogdobg.com.br/recursos-de-multas-de-transito-em-natal-agora-podem-ser-realizados-online-informa-sttu/">
+<span class="rc-reviewer">Carlos</span> em:
+<p class="rc-post">UTILIDADE PÚBLICA: Recursos de multas de trânsi...</p>
+<p class="rc-excerpt">Até q enfim uma notícia boa, até hoje só fui vc recorrer uma vez, só perdi tempo</p>
+</a>
+</li>
+<li>
+<a href="https://www.blogdobg.com.br/modernizacao-das-leis-trabalhistas-comeca-a-varrer-peleguismo-sindical-do-pais-diz-rogerio-marinho/">
+<span class="rc-reviewer">joao</span> em:
+<p class="rc-post">“Modernização das leis trabalhistas começa a va...</p>
+<p class="rc-excerpt">So pelo que fez na reforma, ja merece meu voto. Chega de peleguismo sangue-suga.</p>
+</a>
+</li>
+<li>
+<a href="https://www.blogdobg.com.br/bolsonaro-vai-a-24-e-marina-se-isola-na-segunda-posicao/">
+<span class="rc-reviewer">Fabio</span> em:
+<p class="rc-post">Bolsonaro vai a 24% e Marina se isola na segund...</p>
+<p class="rc-excerpt">O senhor está na lua ou em Marte???? Porque aqui na terra é melhor o senhor Jair se acostumando.</p>
+</a>
+</li>
+<li>
+<a href="https://www.blogdobg.com.br/disson-lisboa-nao-podera-receber-recursos-do-fundo-partidario-nem-utilizar-horario-eleitoral/">
+<span class="rc-reviewer">Thiago</span> em:
+<p class="rc-post">Disson Lisboa não poderá receber recursos do fu...</p>
+<p class="rc-excerpt">Falamos de Lula, Bolsonaro, Sérgio Cabral, mas não olhamos para o nosso umbigo. Temos um bancada úmida, quer conhecer esse sujeito? Coloque o nome dele no Google</p>
+</a>
+</li>
+</ul>
+</div>
+
+<article class="content-ads clearfix">
+<div id='div-gpt-ad-1508863049677-0' style="margin: 0 auto; width: fit-content;">
+<script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1508863049677-0'); });
+      </script>
+</div>
+</article>
+
+<div id="most-viewed">
+<h3>Mais lidas da semana</h3>
+<ul>
+</ul>
+</div>
+
+<article class="content-ads clearfix">
+<div id='div-gpt-ad-1508862892996-0' style="margin: 0 auto; width: fit-content;">
+<script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1508862892996-0'); });
+      </script>
+</div>
+</article>
+<div id="categories-cloud">
+<h3>Categorias</h3>
+<ul class="categories clearfix">
+<li><a href="https://www.blogdobg.com.br/category/acidente/">Acidente</a></li>
+<li><a href="https://www.blogdobg.com.br/category/agendao/">Agendão</a></li>
+<li><a href="https://www.blogdobg.com.br/category/cidades/">Cidades</a></li>
+<li><a href="https://www.blogdobg.com.br/category/clima/">Clima</a></li>
+<li><a href="https://www.blogdobg.com.br/category/coluna-do-bg/">Coluna do BG</a></li>
+<li><a href="https://www.blogdobg.com.br/category/comportamento/">Comportamento</a></li>
+<li><a href="https://www.blogdobg.com.br/category/cultura/">Cultura</a></li>
+<li><a href="https://www.blogdobg.com.br/category/denuncia/">Denúncia</a></li>
+<li><a href="https://www.blogdobg.com.br/category/diversos/">Diversos</a></li>
+<li><a href="https://www.blogdobg.com.br/category/bora-correr/">E ai, bora correr?</a></li>
+<li><a href="https://www.blogdobg.com.br/category/economia/">Economia</a></li>
+<li><a href="https://www.blogdobg.com.br/category/educacao/">Educação</a></li>
+<li><a href="https://www.blogdobg.com.br/category/esporte/">Esporte</a></li>
+<li><a href="https://www.blogdobg.com.br/category/financas/">Finanças</a></li>
+<li><a href="https://www.blogdobg.com.br/category/gastronomia/">Gastronomia</a></li>
+<li><a href="https://www.blogdobg.com.br/category/humor/">Humor</a></li>
+<li><a href="https://www.blogdobg.com.br/category/jornalismo/">Jornalismo</a></li>
+<li><a href="https://www.blogdobg.com.br/category/judiciario/">Judiciário</a></li>
+<li><a href="https://www.blogdobg.com.br/category/marketing/">Marketing</a></li>
+<li><a href="https://www.blogdobg.com.br/category/meiodiacidade/">Meio Dia Cidade</a></li>
+<li><a href="https://www.blogdobg.com.br/category/meio-dia-rn/">Meio Dia RN</a></li>
+<li><a href="https://www.blogdobg.com.br/category/patrocinado/">Patrocinado</a></li>
+<li><a href="https://www.blogdobg.com.br/category/polemica-2/">Polêmica</a></li>
+<li><a href="https://www.blogdobg.com.br/category/policia/">Polícia</a></li>
+<li><a href="https://www.blogdobg.com.br/category/politica/">Política</a></li>
+<li><a href="https://www.blogdobg.com.br/category/religiao/">Religião</a></li>
+<li><a href="https://www.blogdobg.com.br/category/satira/">Sátira</a></li>
+<li><a href="https://www.blogdobg.com.br/category/saude/">Saúde</a></li>
+<li><a href="https://www.blogdobg.com.br/category/seguranca/">Segurança</a></li>
+<li><a href="https://www.blogdobg.com.br/category/sem-categoria/">Sem categoria</a></li>
+<li><a href="https://www.blogdobg.com.br/category/social/">Social</a></li>
+<li><a href="https://www.blogdobg.com.br/category/tecnologia/">Tecnologia</a></li>
+<li><a href="https://www.blogdobg.com.br/category/televisao/">Televisão</a></li>
+<li><a href="https://www.blogdobg.com.br/category/transito-2/">Trânsito</a></li>
+<li><a href="https://www.blogdobg.com.br/category/turismo/">Turismo</a></li>
+</ul>
+</div>
+<article class="content-ads clearfix">
+<div id='div-gpt-ad-1526916794521-0' style="margin: 0 auto; width: fit-content;">
+<script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1526916794521-0'); });
+      </script>
+</div>
+</article>
+<article class="whatsapp clearfix">
+<img data-cfsrc="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.png" alt="Blog do BG" class="img-responsive" style="display:none;visibility:hidden;" /><noscript><img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/whatsapp.png" alt="Blog do BG" class="img-responsive" /></noscript>
+</article>
+<article class="content-ads clearfix">
+<div id='div-gpt-ad-1526917617430-0' style="margin: 20px auto; width: fit-content;">
+<script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1526917617430-0'); });
+      </script>
+</div>
+</article>
+</aside>
+</section>
+</section>
+
+<footer id="footer" style="background-color: #fefefe;">
+<div class="header"><h2>BLOG DO BG É OFERECIDO POR:</h2></div>
+<section class="container patrocinado">
+<div class="desktop">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo13.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo18.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo12.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo19.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo7.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo16.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo2.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo17.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo3.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo4.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo15.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo9.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo8.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo11.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo5.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo20.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo14.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo6.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo10.png; ?>">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo1.png; ?>">
+</div>
+<div class="mobile">
+<div class="slideshow-container-footer" style="display: table;">
+<div class="mySlides-footer fade-footer" style="display: table;">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo8.png; ?>" style="width:100%;">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo16.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo4.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo18.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo2.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo13.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo5.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo1.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo14.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo19.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo6.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo3.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo10.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo9.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo7.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo8.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo15.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo11.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo20.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo17.png; ?>" style="width:100%">
+</div>
+<div class="mySlides-footer fade-footer">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/logo12.png; ?>" style="width:100%">
+</div>
+<div style="text-align:center; margin: -30px">
+<img src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/img/swipe.png; ?>" style="margin: auto; text-align: center;display: table; height: 64px;;">
+</div>
+</div>
+<br>
+</div>
+</section>
+<div class="info-site">
+<section class="container">
+<div class="info">
+<p class="copyright">Blog do BG por Bruno Giovanni - 2018 - &copy; Todos os direitos reservados - Acesse nossa <a href="https://www.blogdobg.com.br/politica-de-privacidade/">Política de Privacidade</a></p>
+<p class="developed-by">Desenvolvido por <a href="http://ratts.com.br/">RATTS | RATIS</a></p>
+</div>
+</section>
+</div>
+</footer>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides-footer");
+
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+
+    slides[slideIndex-1].style.display = "block";  
+  }
+
+
+  function currentSlideFooter(n) {
+
+    var cont = 0;
+    document.getElementsByClassName("mySlides-footer")[n].style.display = "table";
+    for(cont = 0; cont < 20; cont++){
+      if(cont != n){
+        document.getElementsByClassName("mySlides-footer")[cont].style.display = "none";
+      }
+    }
+
+  }
+
+  document.addEventListener('touchstart', handleTouchStart, false);        
+  document.addEventListener('touchmove', handleTouchMove, false);
+
+  var xDown = null;                                                        
+  var yDown = null;                                                        
+
+  function handleTouchStart(evt) {                                         
+    xDown = evt.touches[0].clientX;                                      
+    yDown = evt.touches[0].clientY;                                      
+  };                                                
+
+  var current = 1;
+
+  function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+      return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+      if ( xDiff > 0 ) {
+        currentSlideFooter(Math.abs(current)%17);
+        current++;
+
+      } else {
+        currentSlideFooter(Math.abs(current)%17);
+        current--;
+      }                       
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+  };
+
+</script>
+<script src="https://www.blogdobg.com.br/wp-content/themes/BG-V3/assets/js/scripts.min.js"></script>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-22439170-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+  </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4dbe686848","applicationID":"102914209","transactionName":"ZlxbYxcFVkZVUUZcW18WbEUMS1FbUFdKG0RZSQ==","queueTime":2,"applicationTime":2263,"atts":"ShtYFV8fRUg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
