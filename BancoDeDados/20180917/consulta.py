@@ -7,4 +7,4 @@ cur = conn.cursor()
 cur.execute("select * from contatos")
 resultado = cur.fetchall()
 for contato in resultado:
-    print (contato)
+    print ("Id: {} Nome: {} Telefone: {}".format(contato[2], contato[0], contato[1]))
